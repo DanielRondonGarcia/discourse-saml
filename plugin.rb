@@ -20,7 +20,7 @@ enabled_site_setting :saml_enabled if !GlobalSetting.try("saml_target_url")
 
 on(:before_session_destroy) do |data|
   next if !DiscourseSaml.setting(:slo_target_url).present?
-  data[:redirect_url] = Discourse.base_path + "/auth/saml/spslo"
+  data[:redirect_url] = Discourse.base_path + "/"
 end
 
 module ::DiscourseSaml
