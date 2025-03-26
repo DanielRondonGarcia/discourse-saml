@@ -19,6 +19,6 @@ describe "SAML Single Log Out" do
     sign_in(user)
     delete "/session/#{user.username}", xhr: true
     expect(response.status).to eq(200)
-    expect(response.parsed_body["redirect_url"]).to eq("/auth/saml/spslo")
+    expect(response.parsed_body["redirect_url"]).to eq("/")
   end
 end
